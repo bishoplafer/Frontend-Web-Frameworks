@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+		<title>My Grocery List</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/angular.js"></script>
+		<script src="js/app.js"></script>
+
+	</head>
+	<body ng-app>
+		<div class="container">
+
+			<div class="row">
+
+				<div class="navbar-header">
+					<h1>My Grocery List</h1>
+				</div><!-- /.navbar-header -->
+
+			</div><!-- /.row -->
+
+			<div ng-controller="MyController">
+				<div class="jumbotron">
+					
+					<div class="form-group">
+                		<label for="myGrocery" class="control-label col-sm-2">
+                			Need anything from the store?
+                		</label>
+            			<div class="col-sm-8">
+              				<input name="myGrocery" type="text" ng-model="myGrocery" class="form-control" placeholder="What do we need?" maxlength="100" autofocus />
+            			</div><!-- /.form-control -->
+            			<div class="col-sm-2">
+            				<input type="submit" class="btn btn-success btn-block" ng-click="addGrocery()" />
+            			</div>
+
+              		</div><!-- /.form-group -->
+
+              		<div class="container">
+						<hr />
+						<p class="lead">Here is the list:</p>
+
+						<div><!-- start list of groceries -->
+
+							<ul class="list-group">
+								<li class="list-group-item" ng-repeat="myGrocery in groceryArray">
+									<p>
+										{{ myGrocery }}
+										<span class="close" ng-click="deleteGrocery(myGrocery)">x</span>
+									</p>
+								</li>
+							</ul>
+
+						</div> <!-- end list of groceries -->
+
+					</div><!-- /.container -->
+
+				</div><!-- /.jumbotron -->
+
+			</div><!-- /.myController -->
+
+		</div><!-- /.container -->
+	</body>
+</html>

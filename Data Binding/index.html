@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Intro to Data Binding</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/angular.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/dataService.js"></script>
+
+	</head>
+	<body ng-app="MyApp">
+		<h1>Intro to Data Binding</h1>
+		<div ng-controller="DBController">
+			<input type="text" ng-model="userName" />
+				<input type="submit" ng-click="addName()" />
+				<p>Hello, {{userName}}.</p>
+
+				<ul>
+					<li ng-repeat="name in nameArray">
+						{{name}}
+						<button ng-click="deleteName(name)">x</button>
+					</li>
+				</ul>
+
+		</div><!-- end angular controller DBController -->
+	</body>
+</html>
