@@ -29,7 +29,7 @@
 		            		<label for="myEmployee" class="control-label">
 		            			Name
 		            		</label>
-		          			<input name="myEmployee" type="text" ng-model="myEmployee" class="form-control" placeholder="Employee's Name" maxlength="100" autofocus />
+		          			<input name="myEmployee" type="text" ng-model="myEmployee.name" class="form-control" placeholder="Employee's Name" maxlength="100" autofocus />
 
 		          		</div><!-- /.form-group -->
 						
@@ -41,11 +41,14 @@
 		          	</div><!-- /.col-sm-4 -->
 
 	          		<div class="col-sm-8">
-	          			<div class="col-sm-12" ng-repeat="myEmployee in employeesArray">
+	          			<div class="col-sm-12">
+	          				<div class="col-sm-4" ng-repeat="myEmployee in employeeArray">
 								<p>
-									{{ myEmployee }}
+									{{ myEmployee.name }}
 									<span class="close" ng-click="deleteEmployee(myEmployee)">x</span>
 								</p>
+								<p>Phone: {{ myEmployee.phone }}</p>
+							</div><!-- /.col-sm-4 -->
 						</div><!-- /.col-sm-12 -->
 
 					</div><!-- /.col-sm-8 -->
