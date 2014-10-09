@@ -1,8 +1,8 @@
-angular.module("EmployeeDirectory",[]).controller("MyContoller",function($scope,dataService){
+angular.module("EmployeeDirectory",[]).controller("MyController",function($scope,dataService){
 
 	$scope.myEmployee;
 
-	$scope.employeeArray = ['Bishop','Matt','Mike','Amanda'];
+	$scope.employeeArray = dataService.getEmployees();
 
 	$scope.addEmployee = function(){
 		dataService.addEmployee($scope.myEmployee);
