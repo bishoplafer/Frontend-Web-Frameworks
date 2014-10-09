@@ -26,28 +26,76 @@
 						<h2>Add an Entry</h2>
 						<br />	
 						<div class="form-group">
-		            		<label for="myEmployee" class="control-label">
+		            		<label for="myEmployeeName" class="control-label">
 		            			Name
 		            		</label>
-		          			<input name="myEmployee" type="text" ng-model="myEmployee.name" class="form-control" placeholder="Employee's Name" maxlength="100" autofocus />
+		          			<input name="myEmployeeName" type="text" ng-model="myEmployee.name" class="form-control" placeholder="Employee's Name" maxlength="100" autofocus />
+
+		          		</div><!-- /.form-group -->
+
+		          		<div class="form-group">
+		            		<label for="myEmployeePhone" class="control-label">
+		            			Phone
+		            		</label>
+		          			<input name="myEmployeePhone" type="text" ng-model="myEmployee.phone" class="form-control" placeholder="Employee's Phone Number" maxlength="100" />
+
+		          		</div><!-- /.form-group -->
+
+		          		<div class="form-group">
+		            		<label for="myEmployeeAddress" class="control-label">
+		            			Street Address
+		            		</label>
+		          			<input name="myEmployeeAddress" type="text" ng-model="myEmployee.streetAddress" class="form-control" placeholder="Employee's Street Address" maxlength="100" />
+
+		          		</div><!-- /.form-group -->
+
+		          		<div class="form-group">
+		            		<label for="myEmployeeCity" class="control-label">
+		            			City
+		            		</label>
+		          			<input name="myEmployeeCity" type="text" ng-model="myEmployee.city" class="form-control" placeholder="Employee's City" maxlength="100" />
+
+		          		</div><!-- /.form-group -->
+
+		          		<div class="form-group">
+		            		<label for="myEmployeeState" class="control-label">
+		            			State
+		            		</label>
+		          			<input name="myEmployeeState" type="text" ng-model="myEmployee.state" class="form-control" placeholder="Employee's State" maxlength="100" />
+
+		          		</div><!-- /.form-group -->
+
+		          		<div class="form-group">
+		            		<label for="myEmployeeZip" class="control-label">
+		            			Zip Code
+		            		</label>
+		          			<input name="myEmployeeZip" type="text" ng-model="myEmployee.zip" class="form-control" placeholder="Employee's Zip Code" maxlength="100" />
 
 		          		</div><!-- /.form-group -->
 						
 						<div class="form-group">
 							<div class="clearfix"></div><!-- /.clearfix -->
-		          			<button type="submit" class="btn btn-primary" ng-click="addEmployee()">Add Entry</button>
+		          			<button type="submit" class="btn btn-primary pull-right" ng-click="addEmployee()">Add Entry</button>
 		          		</div><!-- /.form-group -->
 
 		          	</div><!-- /.col-sm-4 -->
 
 	          		<div class="col-sm-8">
 	          			<div class="col-sm-12">
-	          				<div class="col-sm-4" ng-repeat="myEmployee in employeeArray">
-								<p>
+	          				<div class="col-sm-4 thumbnail" ng-repeat="myEmployee in employeeArray track by $index">
+								<h4>
 									{{ myEmployee.name }}
 									<span class="close" ng-click="deleteEmployee(myEmployee)">x</span>
+								</h4>
+								<hr />
+								<p><strong>Phone:</strong> {{ myEmployee.phone }}</p>
+								<p>
+									<strong>Street Address:</strong>
+									<br />
+									{{ myEmployee.streetAddress }}
+									<br />
+									{{ myEmployee.city }}, {{ myEmployee.state }} {{ myEmployee.zip }}
 								</p>
-								<p>Phone: {{ myEmployee.phone }}</p>
 							</div><!-- /.col-sm-4 -->
 						</div><!-- /.col-sm-12 -->
 
