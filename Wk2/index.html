@@ -42,7 +42,7 @@
 		          	</div><!-- /.col-sm-4 -->
 
 	          		<div class="col-sm-8">
-	          			<div class="col-sm-12" >
+	          			<div class="col-sm-12" ng-repeat="myEmployee in employeesArray">
 								<p>
 									{{ myEmployee }}
 									<span class="close" ng-click="deleteEmployee(myEmployee)">x</span>
