@@ -81,23 +81,28 @@
 		          	</div><!-- /.col-sm-4 -->
 
 	          		<div class="col-sm-8">
-	          			<div class="col-sm-12">
-	          				<div class="col-sm-4 thumbnail" ng-repeat="myEmployee in employeeArray track by $index">
-								<h4>
-									{{ myEmployee.name }}
-									<span class="close" ng-click="deleteEmployee(myEmployee)">x</span>
-								</h4>
-								<hr />
-								<p><strong>Phone:</strong> {{ myEmployee.phone }}</p>
-								<p>
-									<strong>Street Address:</strong>
-									<br />
-									{{ myEmployee.streetAddress }}
-									<br />
-									{{ myEmployee.city }}, {{ myEmployee.state }} {{ myEmployee.zip }}
-								</p>
-							</div><!-- /.col-sm-4 -->
-						</div><!-- /.col-sm-12 -->
+	          			<div class="container-fluid">
+		          			<div class="col-sm-4" ng-repeat="myEmployee in employeeArray track by $index">
+		          				<div class=" panel panel-default">
+		          					<div class="panel-heading">
+		          						<h4 class="panel-title">
+											{{ myEmployee.name }}
+											<span class="close" ng-click="deleteEmployee(myEmployee)">&times;</span>
+										</h4>
+									</div><!-- /.panel-heading -->
+									<div class="panel-body">
+										<p><strong>Phone:</strong> {{ myEmployee.phone }}</p>
+										<p>
+											<strong>Street Address:</strong>
+											<br />
+											{{ myEmployee.streetAddress }}
+											<br />
+											{{ myEmployee.city }}, {{ myEmployee.state }} {{ myEmployee.zip }}
+										</p>
+									</div><!-- /.panel-body -->
+								</div><!-- /.panel -->
+							</div><!-- /.col-sm-4 -->	
+						</div><!-- /.container-fluid -->
 
 					</div><!-- /.col-sm-8 -->
 
